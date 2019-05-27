@@ -1,0 +1,12 @@
+h2{
+  text-align:center;
+}
+[nz-form] {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+button {
+  margin-left: 8px;
+}
+    

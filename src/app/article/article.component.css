@@ -1,0 +1,10 @@
+h2{
+  text-align:center;
+}
+.ant-list{
+  width: 900px;
+  margin: 0 auto;
+}
+.ant-list img{
+  max-width: 100%;
+}
