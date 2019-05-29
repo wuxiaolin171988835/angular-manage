@@ -17,8 +17,6 @@ import { IconDefinition } from '@ant-design/icons-angular';
 import { RegisterComponent } from './register/register.component';
 import { ArticleComponent } from './article/article.component';
 
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-
 registerLocaleData(zh);
 
 @NgModule({
@@ -37,7 +35,7 @@ registerLocaleData(zh);
     BrowserAnimationsModule,
     ReactiveFormsModule
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
