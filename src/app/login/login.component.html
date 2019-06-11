@@ -1,12 +1,14 @@
-<h2>登录s快看看快看看</h2>
+<h2>登录</h2>
 <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
   <nz-form-item>
     <nz-form-control>
       <nz-input-group [nzPrefix]="prefixUser">
         <input type="text" nz-input formControlName="userName" placeholder="Username" />
       </nz-input-group>
-      <nz-form-explain *ngIf="validateForm.get('userName')?.dirty && validateForm.get('userName')?.errors">Please input
-        your username!</nz-form-explain>
+      <nz-form-explain *ngIf="
+          validateForm.get('userName')?.dirty &&
+          validateForm.get('userName')?.errors
+        ">Please input your username!</nz-form-explain>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
@@ -14,8 +16,10 @@
       <nz-input-group [nzPrefix]="prefixLock">
         <input type="password" nz-input formControlName="password" placeholder="Password" />
       </nz-input-group>
-      <nz-form-explain *ngIf="validateForm.get('password')?.dirty && validateForm.get('password')?.errors">Please input
-        your Password!</nz-form-explain>
+      <nz-form-explain *ngIf="
+          validateForm.get('password')?.dirty &&
+          validateForm.get('password')?.errors
+        ">Please input your Password!</nz-form-explain>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
@@ -24,7 +28,9 @@
         <span>Remember me</span>
       </label>
       <a class="login-form-forgot" class="login-form-forgot">Forgot password</a>
-      <button nz-button class="login-form-button" [nzType]="'primary'" [disabled]="validateForm.invalid">Log in</button>
+      <button nz-button class="login-form-button" [nzType]="'primary'" [disabled]="validateForm.invalid">
+        Log in
+      </button>
       Or
       <a routerLink="/register">register now!</a>
     </nz-form-control>

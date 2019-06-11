@@ -1,14 +1,20 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
-import { Observable, Observer } from 'rxjs';
-import { Router } from '@angular/router';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ValidationErrors,
+  Validators
+} from "@angular/forms";
+import { Observable, Observer } from "rxjs";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
+  selector: "app-register",
+  templateUrl: "./register.component.html",
 
-  styleUrls: ['./register.component.css']
+  styleUrls: ["./register.component.css"]
 })
 export class RegisterComponent {
   validateForm: FormGroup;
@@ -18,7 +24,7 @@ export class RegisterComponent {
       this.validateForm.controls[key].markAsDirty();
       this.validateForm.controls[key].updateValueAndValidity();
     }
-    this.router.navigate(['/login'])
+    this.router.navigate(["/login"]);
     console.log(value);
   };
 
@@ -32,13 +38,15 @@ export class RegisterComponent {
   }
 
   validateConfirmPassword(): void {
-    setTimeout(() => this.validateForm.controls.confirm.updateValueAndValidity());
+    setTimeout(() =>
+      this.validateForm.controls.confirm.updateValueAndValidity()
+    );
   }
 
   userNameAsyncValidator = (control: FormControl) =>
     new Observable((observer: Observer<ValidationErrors | null>) => {
       setTimeout(() => {
-        if (control.value === 'JasonWood') {
+        if (control.value === "JasonWood") {
           observer.next({ error: true, duplicated: true });
         } else {
           observer.next(null);
@@ -58,11 +66,11 @@ export class RegisterComponent {
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.validateForm = this.fb.group({
-      userName: ['', [Validators.required], [this.userNameAsyncValidator]],
-      email: ['', [Validators.email, Validators.required]],
-      password: ['', [Validators.required]],
-      confirm: ['', [this.confirmValidator]],
-      comment: ['', [Validators.required]]
+      userName: ["", [Validators.required], [this.userNameAsyncValidator]],
+      email: ["", [Validators.email, Validators.required]],
+      password: ["", [Validators.required]],
+      confirm: ["", [this.confirmValidator]],
+      comment: ["", [Validators.required]]
     });
   }
 }

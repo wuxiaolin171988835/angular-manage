@@ -1,5 +1,5 @@
-h2{
-  text-align:center;
+h2 {
+  text-align: center;
 }
 [nz-form] {
   max-width: 600px;
@@ -9,4 +9,3 @@ h2{
 button {
   margin-left: 8px;
 }
-    

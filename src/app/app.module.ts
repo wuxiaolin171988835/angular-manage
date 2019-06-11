@@ -20,24 +20,22 @@ import { ArticleComponent } from './article/article.component';
 registerLocaleData(zh);
 
 @NgModule({
-   declarations: [
-      AppComponent,
-      LoginComponent,
-      RegisterComponent,
-      ArticleComponent,
-   ],
-   imports: [
-      BrowserModule,
-      AppRoutingModule,
-      NgZorroAntdModule,
-      FormsModule,
-      HttpClientModule,
-      BrowserAnimationsModule,
-      ReactiveFormsModule
-   ],
-   providers: [],
-   bootstrap: [
-      AppComponent
-   ]
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    ArticleComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgZorroAntdModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
