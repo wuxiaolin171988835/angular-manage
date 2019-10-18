@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-10-18 14:03:18
+ * @LastEditTime: 2019-10-18 16:14:05
+ * @LastEditors: Please set LastEditors
+ */
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
@@ -12,14 +19,4 @@ const bootstrap = () => {
   return platformBrowserDynamic().bootstrapModule(AppModule);
 };
 
-if (environment.hmr) {
-  if (module['hot']) {
-    hmrBootstrap(module, bootstrap);
-  } else {
-    // 未加上 --hmr 时，控制台会有错误提醒
-    console.error('HMR is not enabled for webpack-dev-server!');
-    console.log('Are you using the --hmr flag for ng serve?');
-  }
-} else {
-  bootstrap().catch(err => console.error(err));
-}
+bootstrap().catch(err => console.error(err));
